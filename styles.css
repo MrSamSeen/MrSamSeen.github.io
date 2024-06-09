@@ -1,0 +1,121 @@
+/* Reset some basic styles */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* General Styles */
+body {
+    background-color: #121212;
+    color: #f5f5f5;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #1e1e1e;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.profile h1 {
+    margin: 10px 0;
+    font-size: 2.5em;
+}
+
+.profile p {
+    color: #bbbbbb;
+    font-size: 1.2em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    background-color: #444444;
+    border-radius: 5px;
+}
+
+/* Section Styles */
+section {
+    padding: 20px 0;
+    border-bottom: 1px solid #333333;
+}
+
+section h2 {
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+.services-list {
+    list-style: none;
+    padding: 0;
+}
+
+.services-list li {
+    background-color: #1e1e1e;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Portfolio Styles */
+.portfolio-items {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.portfolio-item {
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 5px;
+    width: calc(50% - 20px);
+}
+
+.portfolio-item img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.portfolio-item p {
+    margin-top: 10px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1e1e1e;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    color: #bbbbbb;
+    font-size: 0.9em;
+}
