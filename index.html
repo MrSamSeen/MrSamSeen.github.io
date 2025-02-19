@@ -1,70 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SamSeen</title>
+    <title>Sameera Mallawaarachchi - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <div class="profile">
-                <img src="profile.jpg" alt="Profile Picture">
-                <h1>SamSeen</h1>
-                <p>Frelancer / Researcher / Tech Enthusiast.</p>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    
-    <main>
-        <section id="about" class="container">
-            <h2>About Me</h2>
-            <p>        Hello! I'm SamSeen, a passionate freelancer with a keen eye for detail, a dedicated researcher always seeking to uncover new insights, and a tech enthusiast constantly exploring the latest in technology. With a diverse background that bridges creative thinking and analytical prowess, I bring a unique perspective to every project I undertake. My commitment to excellence and continuous learning drives me to deliver top-notch solutions that not only meet but exceed expectations. Whether it’s delving into data, crafting innovative tech solutions, or exploring the frontiers of emerging technologies, I thrive on challenges and am excited to bring my expertise to your next project.
-</p>
-        </section>
-        
-        <section id="services" class="container">
-            <h2>Socials</h2>
-            <ul class="services-list">
-                <li>IG@SamSeen</li>
-                <li>YT@SamSeenPlays</li>
-                <li>YT@SamSeenVlogs</li>
-            </ul>
-        </section>
-        
-        <section id="portfolio" class="container">
-            <h2>Projects</h2>
-            <div class="portfolio-items">
-                <div class="portfolio-item">
-                    <img src="project1.jpg" alt="Project 1">
-                    <p>Civit Ai</p>
-                </div>
-                <div class="portfolio-item">
-                    <img src="project2.jpg" alt="Project 2">
-                    <p>coming soon...</p>
+    <div class="min-h-screen">
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-content">
+                    <!-- Mobile menu button -->
+                    <div class="mobile-menu-btn">
+                        <button id="menuBtn">
+                            <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
-        </section>
-        
-        <section id="contact" class="container">
-            <h2>Contact</h2>
-            <p>LinkedIn: <a href="https://linkedin.com/in/samseen" target="_blank">linkedIn</a></p>
-        </section>
-    </main>
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Your Name. All rights reserved.</p>
+
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav" id="mobileNav">
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Sameera Mallawaarachchi</h1>
+                <h2>Web Production Specialist</h2>
+                <p>Crafting digital experiences through web development, design, and technical expertise</p>
+                <p class="brief">I'm a passionate freelancer with a sharp eye for detail, a dedicated researcher, and a tech enthusiast always exploring the latest innovations. Combining creativity with analytical thinking, I deliver high-quality solutions that exceed expectations. Whether it's data analysis, tech development, or emerging trends, I thrive on challenges and am eager to bring my expertise to your project.                </p>
+            </div>
         </div>
-    </footer>
+
+        <!-- Tabs Navigation -->
+        <div class="tabs-navigation">
+            <button class="tab-button active" data-tab="skills">Skills</button>
+            <button class="tab-button" data-tab="experience">Experience</button>
+            <button class="tab-button" data-tab="education">Education</button>
+            <button class="tab-button" data-tab="achievements">Achievements</button>
+            <button class="tab-button" data-tab="projects">Projects</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <!-- Skills Section -->
+            <section id="skills" class="tab-panel active">
+                <div class="skills-grid" id="skillsGrid">
+                    <!-- Skills will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="tab-panel">
+                <div class="experience-grid" id="experienceGrid">
+                    <!-- Experience will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="tab-panel">
+                <div class="education-grid" id="educationGrid">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Achievements Section -->
+            <section id="achievements" class="tab-panel">
+                <div class="achievements-grid" id="achievementsGrid">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="tab-panel">
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Chrome Extensions</h3>
+                        <p>Browse my collection of productivity-enhancing Chrome extensions</p>
+                        <a href="https://chromewebstore.google.com/search/samseen" target="_blank" class="project-link">View Extensions</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Mobile Applications</h3>
+                        <p>Check out my Android applications on Google Play Store</p>
+                        <a href="https://play.google.com/store/apps/developer?id=samseen" target="_blank" class="project-link">View Apps</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Open Source Projects</h3>
+                        <p>Explore my open source contributions and personal projects</p>
+                        <a href="https://github.com/MrSamSeen" target="_blank" class="project-link">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Web Solutions</h3>
+                        <p>Custom web development solutions for small and medium businesses</p>
+                        <a href="#contact" class="project-link">Get in Touch</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Social Media Management</h3>
+                        <p>Strategic support and content management for YouTube, Instagram, and TikTok</p>
+                        <a href="#contact" class="project-link">Get in Touch</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Freelance Portfolio</h3>
+                        <p>Diverse range of successful freelance projects including web development, design, and technical consulting</p>
+                        <a href="#contact" class="project-link">View Portfolio</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- After the experience section, add: -->
+        <!-- Contact Info Section -->
+        <section id="contact" class="contact-section">
+            <h2>Get in Touch</h2>
+            <div class="contact-grid">
+
+                <div class="contact-item">
+                    <a href="https://linkedin.com/in/samseen" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="https://github.com/MrSamSeen" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="mailto:samseen.x@gmail.com">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+              
+            </div>
+        </section>
+
+    
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
