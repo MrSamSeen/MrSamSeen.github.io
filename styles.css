@@ -89,7 +89,8 @@ body {
 
 /* Hero Section */
 .hero {
-    padding: 4rem 1rem;
+    padding: 8rem 1rem;
+    padding-top: 12rem;
     text-align: center;
 }
 
