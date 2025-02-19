@@ -16,6 +16,33 @@ const achievements = [
     }
 ];
 
+const education = [
+    {
+        title: "BCS Chartered Institute of Information Technology (CIIT)",
+        items: [
+            "Professional Graduate Diploma in IT – 2018",
+            "Diploma level – 2014",
+            "Certificate level – 2012"
+        ]
+    },
+    {
+        title: "Technical Education Certifications",
+        items: [
+            "Diploma in Computer Programming (TEC Sri Lanka) – 2002",
+            "Computer Programming Intermediate level (TEC Sri Lanka) – 2001",
+            "Computer Programming basic level (TEC Sri Lanka) – 2000"
+        ]
+    },
+    {
+        title: "Additional Certifications",
+        items: [
+            "Graphic Designing - WIJEYA Graphics (Pvt.) Ltd – 2005",
+            "Sun Certified Java Professional (SCJP) at IJTS",
+            "Television Journalism Diploma - National Institute of Television Training"
+        ]
+    }
+];
+
 const skills = [
     { category: "Web Development", items: ["HTML", "CSS", "JavaScript", "WordPress", "SEO"] },
     { category: "Digital Marketing", items: ["Social Media Marketing", "Google Analytics", "Content Creation"] },
@@ -94,6 +121,28 @@ const experience = [
 const tabButtons = document.querySelectorAll('.tab-button');
 const tabPanels = document.querySelectorAll('.tab-panel');
 
+// Initialize the first tab (Skills) on page load
+window.addEventListener('DOMContentLoaded', () => {
+    // Remove active class from all buttons and panels first
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    tabPanels.forEach(panel => panel.classList.remove('active'));
+
+    // Show the Skills tab by default
+    const defaultTab = document.querySelector('[data-tab="skills"]');
+    const defaultPanel = document.getElementById('skills');
+
+    if (defaultTab && defaultPanel) {
+        defaultTab.classList.add('active');
+        defaultPanel.classList.add('active');
+    }
+
+    // Initialize content for all sections
+    populateSkills();
+    populateExperience();
+    populateEducation();
+    populateAchievements();
+});
+
 tabButtons.forEach(button => {
     button.addEventListener('click', () => {
         // Remove active class from all buttons and panels
@@ -124,53 +173,124 @@ menuBtn.addEventListener('click', () => {
         : '<line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>';
 });
 
-// Populate Skills
-const skillsGrid = document.getElementById('skillsGrid');
-skills.forEach(skillGroup => {
-    const skillCard = document.createElement('div');
-    skillCard.className = 'skill-card';
+// Function to populate Skills
+function populateSkills() {
+    const skillsGrid = document.getElementById('skillsGrid');
+    if (!skillsGrid) return;
 
-    skillCard.innerHTML = `
-        <h3>${skillGroup.category}</h3>
-        <ul class="skill-list">
-            ${skillGroup.items.map(item => `
-                <li class="skill-item">
-                    <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                    ${item}
-                </li>
-            `).join('')}
-        </ul>
-    `;
+    // Clear existing content
+    skillsGrid.innerHTML = '';
 
-    skillsGrid.appendChild(skillCard);
-});
+    skills.forEach(skillGroup => {
+        const skillCard = document.createElement('div');
+        skillCard.className = 'skill-card';
 
-// Populate Experience
-const experienceGrid = document.getElementById('experienceGrid');
-experience.forEach(job => {
-    const experienceCard = document.createElement('div');
-    experienceCard.className = 'experience-card';
+        skillCard.innerHTML = `
+            <h3>${skillGroup.category}</h3>
+            <ul class="skill-list">
+                ${skillGroup.items.map(item => `
+                    <li class="skill-item">
+                        <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        ${item}
+                    </li>
+                `).join('')}
+            </ul>
+        `;
 
-    experienceCard.innerHTML = `
-        <div class="experience-header">
-            <h3 class="experience-title">${job.role} at ${job.company}</h3>
-            <span class="experience-period">${job.period}</span>
-        </div>
-        <ul class="experience-highlights">
-            ${job.highlights.map(highlight => `
-                <li class="highlight-item">
-                    <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                    ${highlight}
-                </li>
-            `).join('')}
-        </ul>
-    `;
+        skillsGrid.appendChild(skillCard);
+    });
+}
 
-    experienceGrid.appendChild(experienceCard);
-});
+// Function to populate Experience
+function populateExperience() {
+    const experienceGrid = document.getElementById('experienceGrid');
+    if (!experienceGrid) return;
+
+    // Clear existing content
+    experienceGrid.innerHTML = '';
+
+    experience.forEach(job => {
+        const experienceCard = document.createElement('div');
+        experienceCard.className = 'experience-card';
+
+        experienceCard.innerHTML = `
+            <div class="experience-header">
+                <h3 class="experience-title">${job.role} at ${job.company}</h3>
+                <span class="experience-period">${job.period}</span>
+            </div>
+            <ul class="experience-highlights">
+                ${job.highlights.map(highlight => `
+                    <li class="highlight-item">
+                        <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        ${highlight}
+                    </li>
+                `).join('')}
+            </ul>
+        `;
+
+        experienceGrid.appendChild(experienceCard);
+    });
+}
+
+// Function to populate Education
+function populateEducation() {
+    const educationGrid = document.getElementById('educationGrid');
+    if (!educationGrid) return;
+
+    // Clear existing content
+    educationGrid.innerHTML = '';
+
+    education.forEach(edu => {
+        const educationCard = document.createElement('div');
+        educationCard.className = 'education-card';
+
+        educationCard.innerHTML = `
+            <div class="education-header">
+                <h3 class="education-title">${edu.title}</h3>
+            </div>
+            <ul class="education-highlights">
+                ${edu.items.map(item => `
+                    <li class="highlight-item">
+                        <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        ${item}
+                    </li>
+                `).join('')}
+            </ul>
+        `;
+
+        educationGrid.appendChild(educationCard);
+    });
+}
+
+// Function to populate Achievements
+function populateAchievements() {
+    const achievementsGrid = document.getElementById('achievementsGrid');
+    if (!achievementsGrid) return;
+
+    // Clear existing content
+    achievementsGrid.innerHTML = '';
+
+    achievements.forEach(achievement => {
+        const achievementCard = document.createElement('div');
+        achievementCard.className = 'achievement-card';
+
+        achievementCard.innerHTML = `
+            <div class="achievement-content">
+                <div class="trophy-icon ${achievement.type}">${achievement.icon}</div>
+                <div class="achievement-header">
+                    <h3 class="achievement-title">${achievement.title}</h3>
+                    <span class="achievement-year">${achievement.year}</span>
+                </div>
+                <p class="achievement-description">${achievement.description}</p>
+            </div>
+        `;
+
+        achievementsGrid.appendChild(achievementCard);
+    });
+}
 
 // Add this after your existing data constants
-const education = [
+const education2 = [
     {
         title: "BCS Chartered Institute of Information Technology (CIIT)",
         items: [
@@ -196,47 +316,3 @@ const education = [
         ]
     }
 ];
-
-// Populate Achievements
-const achievementsGrid = document.getElementById('achievementsGrid');
-achievements.forEach(achievement => {
-    const achievementCard = document.createElement('div');
-    achievementCard.className = 'achievement-card';
-
-    achievementCard.innerHTML = `
-        <div class="achievement-content">
-            <div class="trophy-icon ${achievement.type}">${achievement.icon}
-            </div>
-            <div class="achievement-header">
-                <h3 class="achievement-title">${achievement.title}</h3>
-                <span class="achievement-year">${achievement.year}</span>
-            </div>
-            <p class="achievement-description">${achievement.description}</p>
-        </div>
-    `;
-
-    achievementsGrid.appendChild(achievementCard);
-});
-
-// Add this after your existing DOM manipulation code
-const educationGrid = document.getElementById('educationGrid');
-education.forEach(edu => {
-    const educationCard = document.createElement('div');
-    educationCard.className = 'education-card';
-
-    educationCard.innerHTML = `
-        <div class="experience-header">
-            <h3 class="experience-title">${edu.title}</h3>
-        </div>
-        <ul class="experience-highlights">
-            ${edu.items.map(item => `
-                <li class="highlight-item">
-                    <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                    ${item}
-                </li>
-            `).join('')}
-        </ul>
-    `;
-
-    educationGrid.appendChild(educationCard);
-});
